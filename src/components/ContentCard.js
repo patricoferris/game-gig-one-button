@@ -13,7 +13,7 @@ class ContentCard extends Component {
         {this.props.content.map((item) => {
           return item.name !== undefined ? (
             <p><a key={item.name} href={item.link}>{item.name}</a></p>
-          ) : (<p key={item} >item</p>);
+          ) : (<p key={item}>{item}</p>);
         })}
       </div>
     );

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import schedule from './data/Schedule';
 import tutorials from './data/Tutorials';
+import involved from './data/Involved';
+import rules from './data/Rules';
 
 import ModalButton from './components/ModalButton';
 import ContentCard from './components/ContentCard';
@@ -12,7 +14,7 @@ class App extends Component {
 
     this.state = {
       modalButton: true,
-      contentCards: [schedule, tutorials]
+      contentCards: [schedule, tutorials, involved, rules]
     }
 
     this.closeModal.bind(this);
