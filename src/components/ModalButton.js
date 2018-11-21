@@ -18,7 +18,7 @@ class ModalButton extends Component {
     console.log(newClasses);
     this.setState({
       classes: newClasses,
-      ids: newIds
+      buttonClasses: newIds
     });
 
     this.props.closeModal();
