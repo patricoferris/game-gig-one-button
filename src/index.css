@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background: rgb(248, 248, 248);
+  opacity: 1;
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.fadeout {
+  opacity: 0;
+}
+
+.game-gig-button {
+  width: 150px;
+  cursor: pointer;
+  height: 150px;
+  font-family: 'Courier New', Courier, monospace;
+  border: none;
+  font-size: 1.5em;
+  background: rgb(255,106,106);
+  background: linear-gradient(0deg, rgba(255,106,106,1) 0%, rgba(254,82,82,1) 51%, rgba(252,52,52,1) 100%);
+  border-radius: 50%;
+  color: rgb(238, 238, 238);
+  box-shadow: 0 12px rgba(254,82,82,1);
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1); 
+  transform: translateY(0px);
+}
+
+.pressed {
+  transform: translateY(-100px);
+}
