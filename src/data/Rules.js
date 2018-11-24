@@ -1,5 +1,5 @@
 const rules = {
-  title: "Rule for the Hackathon",
+  title: "Rules for the Hackathon",
   content: [
   "No fighting",
   "No something else",

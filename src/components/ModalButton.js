@@ -27,7 +27,7 @@ class ModalButton extends Component {
   render() {
     return (
       <div className={this.state.classes.join(" ")}>
-        <button className={this.state.buttonClasses.join(" ")} onClick={this.updateModal}>GAME-GIG 2018</button>
+        <button className={this.state.buttonClasses.join(" ")} onClick={this.updateModal}><h1>Game Gig 2018</h1></button>
       </div>
     );
   }
