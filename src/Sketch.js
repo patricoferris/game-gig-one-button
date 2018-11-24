@@ -1,4 +1,6 @@
 import logo from './data/logo.png';
+import essg from './data/ESSG.png';
+import ss from './data/ss.png';
 export default function sketch(p) {
 
   var cols;
@@ -10,25 +12,33 @@ export default function sketch(p) {
   let flowfield;
   let zoff = 0;
   let num = 100;
+  let img2;
   let img;
+  let spaceship;
+
+  let up = false;
+  let right = false;
+  let left = false;
 
   p.setup = () => {
-    p.createCanvas(p.windowWidth, p.windowHeight/2);
+    p.createCanvas(p.windowWidth, p.windowHeight);
+    console.log(p);
     for(let i = 0; i < num; i++) {
       points.push(new Point(p.random(p.width), p.random(p.height), 4, p));
     }
     imgScale = p.windowWidth / 200;
+    img2 = p.loadImage(essg);
     img = p.loadImage(logo);
     cols = Math.floor(p.width / scale);
     rows = Math.floor(p.height / scale);
     console.log(img);
     flowfield = new Array(cols * rows);
+    spaceship = new Spaceship(p.loadImage(ss), p.windowWidth / 2, 3 * p.windowHeight / 4, 10, p);
   }
 
   p.windowResized = () => {
-    p.resizeCanvas(p.windowWidth, p.windowHeight/2);
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
     imgScale = p.windowWidth / 200;
-    console.log(imgScale);
   }
 
   p.draw = () => {
@@ -54,11 +64,58 @@ export default function sketch(p) {
       points[i].edges(p.width, p.height);
     }
 
+    spaceship.update();
+    spaceship.edges(p.width, p.height);
+    spaceship.show(p);
+
+    if(up) {
+      spaceship.boost();
+    }
+  
+    if(right) {
+      spaceship.rotate(0.1);
+    }
+  
+    if(left) {
+      spaceship.rotate(-0.1);
+    }
+
     connectToMouse(p, num, points);
 
     let imageWidth = img.width / imgScale;
     let imageHeight = img.height / imgScale;
+    let image2Width = img2.width / imgScale * 2.5;
+    let image2Height = img2.height / imgScale * 2.5;
     p.image(img, p.width / 2 - imageWidth / 2, p.height / 2 - imageHeight / 2, imageWidth,  imageHeight);
+    p.image(img2, p.width / 2 - image2Width / 2, p.height / 2 - image2Height * 4, image2Width,  image2Height);
+  }
+
+  p.keyPressed = () => {
+    if(p.keyCode === p.UP_ARROW) {
+      up = true;
+    }
+
+    if(p.keyCode === p.RIGHT_ARROW) {
+      right = true;
+    }
+
+    if(p.keyCode === p.LEFT_ARROW) {
+      left = true;
+    }
+  }
+
+  p.keyReleased = () => {
+    if(p.keyCode === p.UP_ARROW) {
+      up = false;
+    }
+
+    if(p.keyCode === p.RIGHT_ARROW) {
+      right = false;
+    }
+
+    if(p.keyCode === p.LEFT_ARROW) {
+      left = false;
+    }
   }
 }
 
@@ -96,6 +153,68 @@ class Point {
   draw(p) {
     p.fill(255, 0, 0);
     p.ellipse(this.position.x, this.position.y, this.r, this.r);
+  }
+
+  edges(width, height) {
+    let x = this.position.x;
+    let y = this.position.y;
+
+    if(x < 0) {
+      this.position.x = width;
+    }
+
+    if(x > width) {
+      this.position.x = 0;
+    }
+
+    if(y < 0) {
+      this.position.y = height;
+    }
+
+    if(y > height) {
+      this.position.y = 0;
+    }
+  }
+}
+
+// The Spaceship class
+
+class Spaceship {
+  constructor(img, x, y, size, p) {
+    this.img = img;
+    this.position = p.createVector(x, y);
+    this.velocity = p.createVector(0, 0);
+    this.acceleration = p.createVector(0, 0);
+    this.size = size;
+    this.angle = 0;
+    this.up = p.createVector(0, -0.1);
+  }
+
+  boost() {
+    this.applyForce(this.up);
+  }
+
+  rotate(rad) {
+    this.angle += rad;
+    this.up.rotate(rad);
+  }
+
+  applyForce(force) {
+    this.acceleration.add(force);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show(p) {
+    p.push();
+    p.translate(this.position.x, this.position.y);
+    p.rotate(this.angle);
+    p.image(this.img, -64, -64, 128,  128);
+    p.pop();
   }
 
   edges(width, height) {
