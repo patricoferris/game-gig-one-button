@@ -61,9 +61,9 @@ class App extends Component {
         
         <div className='main-content'>
           <Countdown></Countdown>
-          {this.state.contentCards.map(({ title, content }) => {
+          {this.state.contentCards.map(({ title, bullet, content }) => {
             return (
-            <ContentCard key={title} title={title} content={content}></ContentCard>
+            <ContentCard key={title} title={title} bullet={bullet} content={content}></ContentCard>
             );
           })}
         </div>

@@ -1,9 +1,10 @@
 const tutorials = {
   title: "Tutorials",
   content: [
-  {name: "One", link: "www.google.co.uk"},
-  {name: "Two", link: "www.google.co.uk"},
-  {name: "Three", link: "www.bing.co.uk"}
+  {name: "Unity", link: "https://github.com/hackersatcambridge/workshop-unity/blob/master/content/notes/notes.md"},
+  {name: "P5 (Game Gig Splash Page)", link: "https://medium.com/hackers-at-cambridge/computer-graphics-for-everyone-c80fc7e89cdc"},
+  {name: "Love", link: "https://www.facebook.com/events/494254434401184/"},
+  {name: "Unreal Engine", link: "https://academy.unrealengine.com/"}
   ]
 }
 
