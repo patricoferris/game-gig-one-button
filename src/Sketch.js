@@ -33,7 +33,7 @@ export default function sketch(p) {
     rows = Math.floor(p.height / scale);
     console.log(img);
     flowfield = new Array(cols * rows);
-    spaceship = new Spaceship(p.loadImage(ss), p.windowWidth / 2, 3 * p.windowHeight / 4, 10, p);
+    spaceship = new Spaceship(p.loadImage(ss), p.windowWidth / 2, 3.5 * p.windowHeight / 4, 10, p);
   }
 
   p.windowResized = () => {
@@ -183,7 +183,7 @@ class Spaceship {
   constructor(img, x, y, size, p) {
     this.img = img;
     this.position = p.createVector(x, y);
-    this.velocity = p.createVector(0, 0);
+    this.velocity = p.createVector(0, -0.2);
     this.acceleration = p.createVector(0, 0);
     this.size = size;
     this.angle = 0;
