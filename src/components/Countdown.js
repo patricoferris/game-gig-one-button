@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const endTime = new Date('December 1, 2018 22:30:00');
+const endTime = new Date('December 1, 2018 20:00:00');
 
 class Countdown extends Component {
   constructor() {
