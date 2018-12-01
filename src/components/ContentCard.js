@@ -12,13 +12,13 @@ class ContentCard extends Component {
           {this.props.bullet ? <ul> {
             this.props.content.map((item) => {
               return item.name !== undefined ? (
-                <li><a key={item.name} href={item.link}>{item.name}</a></li>
+                <a key={item.name} href={item.link}><li>{item.name}</li></a>
               ) : (<li key={item}>{item}</li>);
             })
           } </ul> : 
           this.props.content.map((item) => {
             return item.name !== undefined ? (
-              <p><a key={item.name} href={item.link}>{item.name}</a></p>
+              <a key={item.name} href={item.link}><p>{item.name}</p></a>
             ) : (<p key={item}>{item}</p>);
           })}
         </div>

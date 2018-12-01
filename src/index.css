@@ -147,6 +147,11 @@ a:hover {
     margin: 10px;
   }
 
+  .App {
+    position: absolute;
+    z-index: -2;
+  }
+
   .content-card {
     margin: 10px;
   }
