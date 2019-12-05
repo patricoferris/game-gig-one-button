@@ -7,7 +7,7 @@ const schedule = {
   "10:30 Hacking begins in the  Intel Lab + Lua Workshop",
   "12:30 Lunch",
   "18:00 Dinner",
-  "19:30 Project Submissions",
+  "19:30 Project Submissions on Devpost",
   "20:00 Submission Deadline",
   "20:00 Prepare for Project Demo",
   "20:15 Judging Begins",
