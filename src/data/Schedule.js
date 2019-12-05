@@ -1,8 +1,8 @@
 const schedule = {
-  title: "Schedule 2018",
+  title: "Schedule 2019",
   bullet: false,
   content: [
-  "9:00-10:00 Arrival. Head to LT1",
+  "9:30-10:00 Arrival. Head to LT1",
   "10:00-10:20 Opening Presentations in LT1",
   "10:30 Hacking begins in the  Intel Lab",
   "12:30 Lunch starts in FW11",

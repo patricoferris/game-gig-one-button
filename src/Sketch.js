@@ -1,4 +1,4 @@
-import logo from './data/logo.png';
+import logo from './data/gg.png';
 import essg from './data/ESSG.png';
 import ss from './data/ss.png';
 export default function sketch(p) {
@@ -26,12 +26,11 @@ export default function sketch(p) {
     for(let i = 0; i < num; i++) {
       points.push(new Point(p.random(p.width), p.random(p.height), 4, p));
     }
-    imgScale = p.windowWidth / 200;
+    imgScale = p.windowWidth / 300;
     img2 = p.loadImage(essg);
     img = p.loadImage(logo);
     cols = Math.floor(p.width / scale);
     rows = Math.floor(p.height / scale);
-    console.log(img);
     flowfield = new Array(cols * rows);
     spaceship = new Spaceship(p.loadImage(ss), p.windowWidth / 2, 3.5 * p.windowHeight / 4, 10, p);
   }

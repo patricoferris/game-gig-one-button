@@ -57,13 +57,13 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.bigEnough ? <Canvas sketch={Sketch}></Canvas> : <img alt='Game Gig 2018' width='100%' src={logo}></img>}
-        {this.state.modalButton ? <ModalButton closeModal={this.closeModal}></ModalButton> : null}
+        {/* {this.state.modalButton ? <ModalButton closeModal={this.closeModal}></ModalButton> : null} */}
         
         <div className='main-content'>
           <Countdown></Countdown>
-          <div className='devpost'>
+          {/* <div className='devpost'>
             <a href='https://game-gig-2018.devpost.com/'>Devpost Page</a>
-          </div>
+          </div> */}
           {this.state.contentCards.map(({ title, bullet, content }) => {
             return (
             <ContentCard key={title} title={title} bullet={bullet} content={content}></ContentCard>
