@@ -4,9 +4,9 @@ const schedule = {
   content: [
   "9:30-10:00 Arrival. Head to LT1",
   "10:00-10:20 Opening Presentations in LT1",
-  "10:30 Hacking begins in the  Intel Lab",
-  "12:30 Lunch starts in FW11",
-  "18:00 Dinner in FW11",
+  "10:30 Hacking begins in the  Intel Lab + Lua Workshop",
+  "12:30 Lunch",
+  "18:00 Dinner",
   "19:30 Project Submissions",
   "20:00 Submission Deadline",
   "20:00 Prepare for Project Demo",
