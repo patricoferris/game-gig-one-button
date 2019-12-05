@@ -2,7 +2,7 @@ const rules = {
   title: "Rules for the Hackathon",
   bullet: true,
   content: [
-    "Also respect and look after the Intel Lab, FW11 and the Computer Lab. Note that food or drink may only be consumed in FW11, and we will be checking!",
+    "Also respect and look after the Intel Lab, Lecture Rooms and the Computer Lab. Note that food or drink may only be consumed in Intel Lab or the Lecture Rooms, and we will be checking!",
     "You can work on your game in a team of up to four people.",
     "Game-making commences at 10:30 and finishes at 20:00.",
     "You are free to do whatever you like with your game after the Game Gig. You own the copyright to all the material you create during the event.",
