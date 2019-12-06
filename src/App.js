@@ -61,9 +61,9 @@ class App extends Component {
         
         <div className='main-content'>
           <Countdown></Countdown>
-          {/* <div className='devpost'>
-            <a href='https://game-gig-2018.devpost.com/'>Devpost Page</a>
-          </div> */}
+          <div className='devpost'>
+            <a href='https://game-gig-2019.devpost.com/'>Devpost Page</a>
+          </div>
           {this.state.contentCards.map(({ title, bullet, content }) => {
             return (
             <ContentCard key={title} title={title} bullet={bullet} content={content}></ContentCard>
